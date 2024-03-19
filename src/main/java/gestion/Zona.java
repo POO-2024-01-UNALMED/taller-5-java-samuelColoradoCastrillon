@@ -7,20 +7,20 @@ public class Zona {
     //Atributos
     private String nombre;
     private Zoologico zoo;
-    private ArrayList<Animal> animales = new ArrayList<>();
+    private ArrayList<Animal> animales = new ArrayList<Animal>();
 
     //Constructores
     public Zona() {}
 
-    public Zona(String nombre, Zoologico zoo, ArrayList<Animal> animales) {
+    public Zona(String nombre, Zoologico zoo) {
         this.nombre = nombre;
         this.zoo = zoo;
-        this.animales = animales;
     }
 
     //Métodos
     public void agregarAnimales(Animal animal) {
         animales.add(animal);
+        animal.setZona(this);
     }
     public int cantidadAnimales() {
         return animales.size();

@@ -12,9 +12,9 @@ public class Ave extends Animal{
     private String colorPlumas;
 
     //Constructores
-    public Ave() {}
-    public Ave(String nombre, int edad, String habitat, String genero, Zona zona, String colorPlumas) {
-        super(nombre, edad, habitat, genero, zona);
+    public Ave() {listado.add(this);}
+    public Ave(String nombre, int edad, String habitat, String genero, String colorPlumas) {
+        super(nombre, edad, habitat, genero);
         this.colorPlumas = colorPlumas;
         listado.add(this);
     }
@@ -23,13 +23,13 @@ public class Ave extends Animal{
     public static int cantidadAves() {
         return listado.size();
     }
-    public Ave crearHalcon(String nombre, int edad, String genero, Zona zona) {
+    public static Ave crearHalcon(String nombre, int edad, String genero) {
         halcones += 1;
-        return new Ave(nombre, edad, "montanas", genero, zona, "cafe glorioso");
+        return new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
     }
-    public Ave crearAguila(String nombre, int edad, String genero, Zona zona) {
+    public static Ave crearAguila(String nombre, int edad, String genero) {
         aguilas += 1;
-        return new Ave(nombre, edad, "montanas", genero, zona, "blanco y amarillo");
+        return new Ave(nombre, edad, "montanas", genero, "blanco y amarillo");
     }
     public static ArrayList<Ave> getListado() {
         return listado;

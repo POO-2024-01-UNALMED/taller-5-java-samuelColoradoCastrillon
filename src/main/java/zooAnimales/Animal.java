@@ -11,23 +11,20 @@ public class Animal {
     private Zona zona;
 
     //Constructores
-    public Animal() {}
-    public Animal(String nombre, int edad, String habitat, String genero, Zona zona) {
+    public Animal() {
+        totalAnimales += 1;
+    }
+    public Animal(String nombre, int edad, String habitat, String genero) {
         this.nombre = nombre;
         this.edad = edad;
         this.habitat = habitat;
         this.genero = genero;
-        this.zona = zona;
         totalAnimales += 1;
     }
 
     //Métodos
-    public String totalPorTipo() {
-        return ("Mamiferos" + Mamifero.cantidadMamiferos()
-                + "\nAves" + Ave.cantidadAves()
-                + "\nReptiles" + Reptil.cantidadReptiles()
-                + "\nPeces" + Pez.cantidadPeces()
-                + "\nAnfibios" + Anfibio.cantidadAnfibios());
+    public static String totalPorTipo() {
+        return "Mamiferos: " + Mamifero.cantidadMamiferos()+ "\n"+"Aves: " + Ave.cantidadAves()+ "\n"+"Reptiles: "+Reptil.cantidadReptiles()+"\n"+"Peces: "+Pez.cantidadPeces()+"\n"+"Anfibios: "+Anfibio.cantidadAnfibios();
     }
     @Override
     public String toString() {
