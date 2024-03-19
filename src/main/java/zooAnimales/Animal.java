@@ -37,14 +37,8 @@ public class Animal {
                     + " y mi genero es " + genero);
         }
     }
-    public String movimiento() {
-        return switch (this) {
-            case Ave ave -> "volar";
-            case Reptil reptil -> "reptar";
-            case Pez pez -> "nadar";
-            case Anfibio anfibio -> "saltar";
-            default -> "desplazarse";
-        };
+    public String movimiento(){
+        return "desplazarse";
     }
     public String getNombre() {
         return nombre;

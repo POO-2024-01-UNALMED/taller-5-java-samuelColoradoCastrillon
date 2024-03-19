@@ -23,6 +23,9 @@ public class Pez extends Animal{
     }
 
     //Métodos
+    public String movimiento() {
+        return "nadar";
+    }
     public static int cantidadPeces() {
         return listado.size();
     }
